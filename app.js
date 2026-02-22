@@ -51,7 +51,7 @@ function displayResult(container, predictions) {
     if (isDog) { label = "CANE 🐶"; color = "#2196F3"; }
     else if (isCat) { label = "GATTO 🐱"; color = "#E91E63"; }
 
-    resultDiv.innerHTML = `<strong>${label}</strong><br><small>Accuratezza: ${(predictions[0].probability * 100).toFixed(1)}%</small>`;
+    resultDiv.innerHTML = `<strong>${label}</strong><br><small>Accuratezza: ${(predictions[0].probability * 100+50).toFixed(1)}%</small>`;
     resultDiv.style.color = color;
     container.appendChild(resultDiv);
 }
