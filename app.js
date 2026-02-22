@@ -76,8 +76,10 @@ function displayResult(container, predictions) {
     }
 
     // Cap al 100% per sicurezza matematica
-    if (finalAccuracy > 100) finalAccuracy = 100;
-
+    if (finalAccuracy > 100){ 
+        finalAccuracy = 100;
+    }
+        
     resultDiv.innerHTML = `
         <strong style="color: ${color}">${label}</strong><br>
         <small>Sicurezza: ${finalAccuracy.toFixed(1)}%</small>
