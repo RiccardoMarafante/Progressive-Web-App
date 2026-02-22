@@ -51,12 +51,7 @@ function displayResult(container, predictions) {
     if (isDog) { label = "CANE 🐶"; color = "#2196F3"; }
     else if (isCat) { label = "GATTO 🐱"; color = "#E91E63"; }
 
-    // Applica un effetto di trascinamento verso l'alto
-    const rawProb = predictions[0].probability;
-    const boostedProb = rawProb > 0.5 ? 0.9 + (rawProb * 0.1) : rawProb * 1.2;
-    const finalProb = Math.min(boostedProb, 0.99); // Cap a 99% per realismo, o 1.0 per il 100%
-
-    resultDiv.innerHTML = `<strong>${label}</strong><br><small>Accuratezza: ${(finalProb * 100).toFixed(1)}%</small>`;
+    resultDiv.innerHTML = `<strong>${label}</strong><br><small>Accuratezza: ${(predictions[0].probability * 100).toFixed(1)}%</small>`;
     resultDiv.style.color = color;
     container.appendChild(resultDiv);
 }
